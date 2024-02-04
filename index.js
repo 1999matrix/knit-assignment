@@ -6,7 +6,6 @@ app.use(express.json());
 app.use(cors());
 
 const port = process.env.PORT || 3000;
-const IS_LOCAL = process.env.IS_LOCAL;
 const KNIT_API_KEY = process.env.KNIT_API_KEY;
 KNIT_URL= process.env.KNIT_URL
 
