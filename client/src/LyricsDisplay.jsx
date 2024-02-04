@@ -4,4 +4,4 @@ function LyricsDisplay({ lyrics }) {
     return <pre>{lyrics}</pre>
   }
 
-export default LyricsDisplay
+export default LyricsDisplay;

@@ -10,7 +10,7 @@ function LyricsForm({ onSubmit }) {
       onSubmit(theme, genre);
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', padding: '1rem' }}>
           <input 
             value={theme}
             onChange={(e) => setTheme(e.target.value)}

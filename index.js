@@ -1,10 +1,14 @@
 const express = require('express');
-
+const cors = require('cors');
 const app = express();
+require('dotenv').config();
 
 app.use(express.json());
+app.use(cors());
 
-const KNIT_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiMTE3NDg3MzY2MDgyMTAwNjQ1NDcyIn0sImlhdCI6MTcwNjg4MTkzNywiZXhwIjoxNzA3OTYxOTM3fQ.AmXXdQDg1UQhXemOFISzbjn8-Q6iRUaGoPKzxP7JS8I';
+const IS_LOCAL = process.env.IS_LOCAL;
+const KNIT_API_KEY = process.env.KNIT_API_KEY;
+KNIT_URL= process.env.KNIT_URL
 
 app.post('/generate', async (req, res) => {
 
@@ -43,7 +47,7 @@ app.post('/generate', async (req, res) => {
       variables,
     };
     
-    const response = await fetch('https://api.getknit.ai/v1/router/run', {
+    const response = await fetch(KNIT_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -62,6 +66,6 @@ app.post('/generate', async (req, res) => {
 
 });
 
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
+app.listen(IS_LOCAL ? 3000 : 80, () => {
+  console.log(`Server running on port ${IS_LOCAL ? 3000 : 80}`);
 });
