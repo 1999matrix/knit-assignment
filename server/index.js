@@ -3,15 +3,13 @@ const cors = require('cors');
 const app = express();
 const bodyParser = require('body-parser');
 
-require('dotenv').config();
-
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
 
 const port = process.env.PORT || 3000;
-const KNIT_API_KEY = process.env.KNIT_API_KEY;
-KNIT_URL= process.env.KNIT_URL
+const KNIT_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiMTE3NDg3MzY2MDgyMTAwNjQ1NDcyIn0sImlhdCI6MTcwNjg4MTkzNywiZXhwIjoxNzA3OTYxOTM3fQ.AmXXdQDg1UQhXemOFISzbjn8-Q6iRUaGoPKzxP7JS8I";
+KNIT_URL= "https://api.getknit.ai/v1/router/run";
 
 app.post('/generate', async (req, res) => {
 
