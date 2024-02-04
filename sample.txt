@@ -1,0 +1,28 @@
+curl --request POST 'https://api.getknit.ai/v1/router/run' \
+--header 'x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiMTE3NDg3MzY2MDgyMTAwNjQ1NDcyIn0sImlhdCI6MTcwNjg4MTkzNywiZXhwIjoxNzA3OTYxOTM3fQ.AmXXdQDg1UQhXemOFISzbjn8-Q6iRUaGoPKzxP7JS8I' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "messages": [
+	{
+		"role": "system",
+		"content": "You are a helpful Assistant."
+	},
+	{
+		"role": "user",
+		"content": "Compose original song lyrics about {{theme}} in the {{genre}} genre."
+	}
+],
+    "model": {
+	"name": "openai/gpt-3.5-turbo"
+},
+    "variables": [
+	{
+		"name": "theme",
+		"value": "gangster"
+	},
+	{
+		"name": "genre",
+		"value": "rock"
+	}
+]
+}'
