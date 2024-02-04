@@ -2,10 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 require('dotenv').config();
-
 app.use(express.json());
 app.use(cors());
 
+const port = process.env.PORT || 3000;
 const IS_LOCAL = process.env.IS_LOCAL;
 const KNIT_API_KEY = process.env.KNIT_API_KEY;
 KNIT_URL= process.env.KNIT_URL
@@ -66,6 +66,6 @@ app.post('/generate', async (req, res) => {
 
 });
 
-app.listen(IS_LOCAL ? 3000 : 80, () => {
-  console.log(`Server running on port ${IS_LOCAL ? 3000 : 80}`);
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
