@@ -11,7 +11,7 @@ export default function App() {
   const handleSubmit = async (theme, genre) => {
     setLoading(true);
     try{
-      const response = await fetch('http://localhost:3000/generate', {
+      const response = await fetch('https://knit-assignment-backend.onrender.com/generate', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
