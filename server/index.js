@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 const KNIT_API_KEY = process.env.KNIT_API_KEY;
 KNIT_URL= process.env.KNIT_URL
 
