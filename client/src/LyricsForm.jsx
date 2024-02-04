@@ -14,11 +14,13 @@ function LyricsForm({ onSubmit }) {
           <input 
             value={theme}
             onChange={(e) => setTheme(e.target.value)}
+            placeholder='Enter the theme of your song'
           />
     
           <input
             value={genre}
             onChange={(e) => setGenre(e.target.value)}  
+            placeholder='Enter the genre of your song'
           />
     
           <button type="submit">Generate Lyrics</button>
