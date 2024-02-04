@@ -11,7 +11,7 @@ app.use(cors());
 
 const port = process.env.IS_LOCAL ? 3000 : 80;
 const KNIT_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiMTE3NDg3MzY2MDgyMTAwNjQ1NDcyIn0sImlhdCI6MTcwNjg4MTkzNywiZXhwIjoxNzA3OTYxOTM3fQ.AmXXdQDg1UQhXemOFISzbjn8-Q6iRUaGoPKzxP7JS8I";
-KNIT_URL= "https://api.getknit.ai/v1/router/run";
+const KNIT_URL= "https://api.getknit.ai/v1/router/run";
 
 app.post('/generate', async (req, res) => {
 
